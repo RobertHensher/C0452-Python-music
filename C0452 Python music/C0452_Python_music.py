@@ -20,3 +20,32 @@ for artist, songs, in music.items():
         print(songtitle)
 print('---------------------------------------')
 
+
+
+
+## delete of song
+## input of artist and input of song will delete from dictionary
+artist = input("name of artist:")
+song = input("name of song:")
+del(music[artist][song])
+
+
+
+
+print('---------------------------------------')
+print('List of songs:')
+print('---------------------------------------')
+for artist, songs, in music.items():
+    
+    for songtitle, playcount in songs.items():
+        print(songtitle)
+print('---------------------------------------')
+
+
+
+
+
+
+
+
+

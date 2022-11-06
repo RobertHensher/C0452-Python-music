@@ -23,7 +23,12 @@ while (True):
    print ("Q = Quit")
    print('---------------------------------------')
    selection= input ("Make a selection: ") 
+
+
+
    if selection ==  'L':
+
+       ## If L is pressed the list of songs will be shown
        print('---------------------------------------')
        print('List of songs:')
        print('---------------------------------------')
@@ -43,9 +48,18 @@ while (True):
 
 
 
-   elif selection ==  '3':
-        print ("you selected 3")
-        continue
+   elif selection ==  'D':
+       
+      ## delete of song
+        ## input of artist and input of song will delete from dictionary
+         artist = input("name of artist:")
+         song = input("name of song:")
+         del(music[artist][song])
+         continue
+
+
+
+
    elif selection ==  'Q':
         break
    else:
@@ -54,11 +68,7 @@ while (True):
 
 
 
-## delete of song
-## input of artist and input of song will delete from dictionary
-artist = input("name of artist:")
-song = input("name of song:")
-del(music[artist][song])
+
 
 
 

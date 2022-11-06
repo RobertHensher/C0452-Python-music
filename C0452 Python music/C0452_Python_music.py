@@ -8,18 +8,49 @@ music = {
         }
 
 
-## List of songs
-## this bit of code lists the songs that are in the dictionary
 
-print('---------------------------------------')
-print('List of songs:')
-print('---------------------------------------')
-for artist, songs, in music.items():
+
+
+
+## menu added for selection
+## loop added so that selection can be presented until Q is pressed
+while (True):
+  
+   print ("L = List")
+   print ("A = Add")
+   print ("D = Delete")
+   print ("P = List popular songs")
+   print ("Q = Quit")
+   print('---------------------------------------')
+   selection= input ("Make a selection: ") 
+   if selection ==  'L':
+       print('---------------------------------------')
+       print('List of songs:')
+       print('---------------------------------------')
+       for artist, songs, in music.items():
     
-    for songtitle, playcount in songs.items():
-        print(songtitle)
-print('---------------------------------------')
+            for songtitle, playcount in songs.items():
+             print(songtitle)
+       print('---------------------------------------')
 
+
+
+       continue
+   elif selection ==  '2':
+        print ("you selected 2")
+        continue
+
+
+
+
+   elif selection ==  '3':
+        print ("you selected 3")
+        continue
+   elif selection ==  'Q':
+        break
+   else:
+        print ("need to select from choices")
+        continue 
 
 
 
@@ -33,13 +64,16 @@ del(music[artist][song])
 
 
 print('---------------------------------------')
-print('List of songs:')
+print('Updated list of songs:')
 print('---------------------------------------')
 for artist, songs, in music.items():
     
     for songtitle, playcount in songs.items():
         print(songtitle)
 print('---------------------------------------')
+
+
+
 
 
 

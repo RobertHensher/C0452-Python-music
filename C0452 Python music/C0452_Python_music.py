@@ -40,11 +40,14 @@ while (True):
 
 
 
+       # add option allows new song for whatever artist chosen
+
        continue
    elif selection ==  'A':
-        print ("you selected 2")
+        artist = input("name of artist:")
+        song = input("name of song:")
+        music[artist] = {song:0}
         continue
-
 
 
 
@@ -52,6 +55,7 @@ while (True):
        
       ## delete of song
         ## input of artist and input of song will delete from dictionary
+         ## checking incorrect input for artist name and song
          artist = input("name of artist:")
          found = music.get(artist)
          if found:
@@ -59,10 +63,19 @@ while (True):
              print ("artist was found- ") 
              print('---------------------------------------')
              song = input("name of song:")
-             del(music[artist][song])
-             print('---------------------------------------')
-             print ("Song removed")
-             print('---------------------------------------')
+             songfound = music.get(song)
+             if songfound: 
+
+                del(music[artist][song])
+                print('---------------------------------------')
+                print ("Song removed")
+                print('---------------------------------------')
+             else :
+                print('---------------------------------------')
+                print ("song was not found-")
+                print('---------------------------------------')
+
+                continue
 
          else :
              print('---------------------------------------')
@@ -77,6 +90,12 @@ while (True):
           ## code searches through dictionary to find songs that are more than inputed number 
    elif selection ==  'P':
          NumPlaysInput = input ("input number of plays: ")
+         if NumPlaysInput.isdigit() :
+            print('Its a number')
+         else :
+             print('Its NOT a number')
+             print('---------------------------------------')
+             continue
          print ("List of songs: ")
          for artist, songs, in music.items():
             for songtitle, playcount in songs.items():

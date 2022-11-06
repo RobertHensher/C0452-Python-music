@@ -41,7 +41,7 @@ while (True):
 
 
        continue
-   elif selection ==  '2':
+   elif selection ==  'A':
         print ("you selected 2")
         continue
 
@@ -53,9 +53,38 @@ while (True):
       ## delete of song
         ## input of artist and input of song will delete from dictionary
          artist = input("name of artist:")
-         song = input("name of song:")
-         del(music[artist][song])
+         found = music.get(artist)
+         if found:
+             print('---------------------------------------')
+             print ("artist was found- ") 
+             print('---------------------------------------')
+             song = input("name of song:")
+             del(music[artist][song])
+             print('---------------------------------------')
+             print ("Song removed")
+             print('---------------------------------------')
+
+         else :
+             print('---------------------------------------')
+             print ("artist was not found-")
+             print('---------------------------------------')
+
+        
+             continue
+
+
+         
+          ## code searches through dictionary to find songs that are more than inputed number 
+   elif selection ==  'P':
+         NumPlaysInput = input ("input number of plays: ")
+         print ("List of songs: ")
+         for artist, songs, in music.items():
+            for songtitle, playcount in songs.items():
+                if (int(NumPlaysInput)<playcount):
+                    print(songtitle)
+         print('---------------------------------------')
          continue
+
 
 
 
@@ -73,14 +102,7 @@ while (True):
 
 
 
-print('---------------------------------------')
-print('Updated list of songs:')
-print('---------------------------------------')
-for artist, songs, in music.items():
-    
-    for songtitle, playcount in songs.items():
-        print(songtitle)
-print('---------------------------------------')
+
 
 
 
